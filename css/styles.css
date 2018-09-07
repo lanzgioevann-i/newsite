@@ -1,6 +1,12 @@
 body{
     overflow: scroll;
     padding-bottom: 0;
+    /*background: url('https://lazygeniuslanz.github.io/img/parallax3.png') no-repeat fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;*/
+    background-color: white;
 }
 ::-webkit-scrollbar {
     width: 0px;  /* remove scrollbar space */
@@ -8,7 +14,20 @@ body{
 }
 /* optional: show position indicator in red */
 ::-webkit-scrollbar-thumb {
-    background: #FF0000;
+    background: transparent;
+}
+
+.navbackground{
+    background: url('https://lazygeniuslanz.github.io/img/parallax2.png') no-repeat fixed;
+    min-height: 30vh;
+    padding: 5vh;
+
+    clip-path: polygon(
+    0 0, /* left top */
+    100% 0, /* right top */ 
+    100% 100%, /* right bottom */
+    0 calc(95% - 6vw) /* left bottom */
+  );
 }
 
 .scrollbar{
@@ -17,18 +36,108 @@ body{
     top: 35%;
     left: 2%;
     min-height: 30%;
-    width: 0.8%;
+    width: 1%;
     padding: 0 !important;
+    z-index: 1000;      
 }
 
 .scrollbar-bar{
-    background-color: #ffffff;
+    background-color: rgb(88,169,250);
     position: absolute;
     height: 1%;
     width: 100%;
 }
 
-.page{
-    min-height: 100vh;
-    opacity: 1;
+.intro{
+    min-height: 70vh;
+    padding: 5vh 8vh 0 8vh;
 }
+
+.page{
+    min-height: 70vh;
+}
+
+.content{
+    min-height: 20vh;
+}
+
+.works-container{
+    background: url('https://lazygeniuslanz.github.io/img/parallax2.png') no-repeat ;
+    position: relative;
+    padding-top: 5vh;
+    overflow: scroll;
+}
+
+.works-container::after {
+    content: '';
+    position: absolute;
+    width: 1px;
+    border-left: 1px dashed rgba(255, 255, 255, 0.5);
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -3px;
+}
+
+.work.hidden{
+    max-height: 0;
+}
+
+.work::before{
+    content: ' ';
+    border-left: 50px solid white;
+    margin-left: 48%;
+}
+/*
+.work::after {
+    content: ' ';
+    background-color: rgb(88,169,250);
+    position: absolute;
+    height: 25px;
+    width: 10px;
+    border-left: 50px solid white;
+    top: 7vh;
+    bottom: 0;
+    left: 50%;
+}
+*/
+.work-right::before{
+    content: ' ';
+    border-left: 50px solid white;
+    height: 5px;
+    margin-left: -50px;
+}
+
+.work-left::before{
+    content: ' ';
+    border-left: 50px solid white;
+    height: 25px;
+    margin-left: 50%;
+}
+
+
+/*
+.work::after{
+    content: ' ';
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    border: 5px solid white;
+    border-radius: 100%;
+    top: 5vh;
+    left: 49.14%;
+}
+*/
+
+.work-title{
+    margin-top: -7vh;
+}
+
+
+
+.no-padding{
+    padding: 0 !important;
+}
+
+
+
