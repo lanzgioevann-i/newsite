@@ -9,18 +9,21 @@
         <link rel="stylesheet" href="css/styles.css">
 
         
-        <script src="cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.10/angular.min.js"></script>
-        <script src="cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.10/angular-route.min.js"></script>
-        <script src="ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular-animate.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.10/angular.min.js"></script>
         
         <script>
-            var appWorks = angular.module('appWorks' []);
-            appWorks.controller('WorksController', function($scope, $http){
-                
+            var app = angular.module('appBody', []);
+            app.controller('WorksController', function($scope, $http){
+                $http.get('https://raw.githubusercontent.com/lazygeniuslanz/newsite/master/data/works.json').success(function(data){
+                    
+                    console.log(data);
+                    
+                    console.log("WorksController loaded");
+                });
             });
         </script>
     </head>
-    <body>
+    <body ng-app="appBody">
         <div class="navbackground">
             <nav class="navbar navbar-expand-lg navbar-light ">
 
@@ -85,7 +88,7 @@
             </div>
         </div>
 
-        <div class="works-container" ng-app="appWorks">
+        <div class="works-container" ng-controller="WorksController">
             
             <div class="work" id="test" onmouseover="a(this.id)">
                 <div class="container">
