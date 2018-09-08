@@ -1,5 +1,6 @@
 body{
-    overflow: scroll;
+    overflow: none;
+  -ms-overflow-style:none;
     padding-bottom: 0;
     /*background: url('https://lazygeniuslanz.github.io/img/parallax3.png') no-repeat fixed;
 	-webkit-background-size: cover;
@@ -8,17 +9,22 @@ body{
 	background-size: cover;*/
     background-color: white;
 }
-::-webkit-scrollbar {
-    width: 0px;  /* remove scrollbar space */
-    background: transparent;  /* optional: just make scrollbar invisible */
-}
-/* optional: show position indicator in red */
 ::-webkit-scrollbar-thumb {
-    background: transparent;
+  display: none;
+}
+::-webkit-scrollbar {
+  display: none;
+}
+::-webkit-scrollbar-button {
+  display: none;
 }
 
 .navbackground{
     background: url('https://lazygeniuslanz.github.io/img/parallax2.png') no-repeat fixed;
+    -webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
     min-height: 30vh;
     padding: 5vh;
 
@@ -31,20 +37,16 @@ body{
 }
 
 .scrollbar{
-    background-color: rgba(54, 55, 56, 0.8);
-    position: fixed;
-    top: 35%;
-    left: 2%;
-    min-height: 30%;
-    width: 1%;
-    padding: 0 !important;
-    z-index: 1000;      
+    position: fixed; 
+    height: 30%;
+    width: 0.8%; 
+    left: 20px; 
+    top: 35%;    
+    z-index: 1000;
+    opacity: 0.8;
 }
 
 .scrollbar-bar{
-    background-color: rgb(88,169,250);
-    position: absolute;
-    height: 1%;
     width: 100%;
 }
 
@@ -62,10 +64,17 @@ body{
 }
 
 .works-container{
-    background: url('https://lazygeniuslanz.github.io/img/parallax2.png') no-repeat ;
+    background: url('https://lazygeniuslanz.github.io/img/parallax2.png') no-repeat fixed;
+    -webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+    
     position: relative;
+    display: block;
     padding-top: 5vh;
-    overflow: scroll;
+    
+    transition: 0.7s background ease-in;
 }
 
 .works-container::after {
@@ -79,8 +88,13 @@ body{
     margin-left: -3px;
 }
 
-.work.hidden{
-    max-height: 0;
+.work{
+    opacity: 0.5;
+    transition: all 0.4s ease-in;
+}
+
+.work:hover{
+    opacity: 1;
 }
 
 .work::before{
@@ -88,19 +102,7 @@ body{
     border-left: 50px solid white;
     margin-left: 48%;
 }
-/*
-.work::after {
-    content: ' ';
-    background-color: rgb(88,169,250);
-    position: absolute;
-    height: 25px;
-    width: 10px;
-    border-left: 50px solid white;
-    top: 7vh;
-    bottom: 0;
-    left: 50%;
-}
-*/
+
 .work-right::before{
     content: ' ';
     border-left: 50px solid white;
@@ -116,23 +118,9 @@ body{
 }
 
 
-/*
-.work::after{
-    content: ' ';
-    position: absolute;
-    width: 25px;
-    height: 25px;
-    border: 5px solid white;
-    border-radius: 100%;
-    top: 5vh;
-    left: 49.14%;
-}
-*/
-
 .work-title{
-    margin-top: -7vh;
+    margin-top: -16%;
 }
-
 
 
 .no-padding{
