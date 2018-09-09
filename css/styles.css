@@ -72,9 +72,9 @@ body{
     
     position: relative;
     display: block;
-    padding-top: 5vh;
+    padding: 5vh 0 5vh 0;
     
-    transition: 0.7s background ease-in;
+    transition: 0.5s background ease-in;
 }
 
 .works-container::after {
@@ -89,32 +89,13 @@ body{
 }
 
 .work{
+    padding: 15vh 0 15vh 0;
     opacity: 0.5;
     transition: all 0.4s ease-in;
 }
 
 .work:hover{
     opacity: 1;
-}
-
-.work::before{
-    content: ' ';
-    border-left: 50px solid white;
-    margin-left: 48%;
-}
-
-.work-right::before{
-    content: ' ';
-    border-left: 50px solid white;
-    height: 5px;
-    margin-left: -50px;
-}
-
-.work-left::before{
-    content: ' ';
-    border-left: 50px solid white;
-    height: 25px;
-    margin-left: 50%;
 }
 
 
