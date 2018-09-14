@@ -64,7 +64,7 @@ body{
 }
 
 .works-container{
-    background: url('https://lazygeniuslanz.github.io/img/parallax2.png') no-repeat fixed;
+    background: url('https://lazygeniuslanz.github.io/img/parallax2.png') no-repeat fixed #1b1b1b;
     -webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -74,7 +74,7 @@ body{
     display: block;
     padding: 5vh 0 5vh 0;
     
-    transition: 0.5s background ease-in;
+    transition: 0.3s background ease-in;
 }
 
 .works-container::after {
@@ -103,10 +103,21 @@ body{
     margin-top: -16%;
 }
 
-
-.no-padding{
-    padding: 0 !important;
+.navbar-toggler span{
+  display: block;
+  position: absolute;
+  height: 2px;
+  width: 10%;
+  background: #fff;
+  border-radius: 9px;
+  opacity: 1;
+  left: 80%;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: .25s ease-in-out;
+  -moz-transition: .25s ease-in-out;
+  -o-transition: .25s ease-in-out;
+  transition: .25s ease-in-out;
 }
-
-
-
