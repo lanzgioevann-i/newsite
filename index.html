@@ -12,10 +12,12 @@
        
     </head>
     <body ng-app="appBody">
+	
+		<!-- NAV BAR -->
         <div class="navbackground">
             <nav class="navbar navbar-expand-lg navbar-light ">
 
-                <a class="navbar-brand white-text" href="#">Navbar</a>
+                <a class="navbar-brand white-text" href="#">Test Title</a>
 
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -30,7 +32,7 @@
                             <a class="nav-link white-text" href="#">Link</a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle white-text" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle white-text" style="z-index:1000;"href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Dropdown
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -115,18 +117,7 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.10/angular.min.js"></script>
         
-        <script>
-            var app = angular.module('appBody', []);
-            app.controller('WorksController', function($scope, $http){
-                $http.get('https://raw.githubusercontent.com/lazygeniuslanz/newsite/master/data/works.json').success(function(data){
-                    $scope.works = data;
-                    $(".works-container").css("background-image", data[0].imgSrc);
-                    
-                    console.log("WorksController loaded");
-                });
-            });
-        </script>
-        
+        <script src="js/works.js"></script>
         <script src="js/scrollbar.js"></script>
         <script src="js/hoverwork.js"></script>
     </body>
